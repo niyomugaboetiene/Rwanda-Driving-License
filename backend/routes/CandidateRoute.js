@@ -99,7 +99,7 @@ router.delete('/delete/:_id', async (req, res) => {
 
         await Candidate.findByIdAndDelete(_id);
 
-        return res.status(200).json({ message:'Updated successfully' });
+        return res.status(200).json({ message:'deleted successfully' });
     } catch (err) {
         console.error(err);
         return req.status(500).json({ message: 'Internal server error' });
