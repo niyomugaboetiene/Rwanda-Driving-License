@@ -39,5 +39,15 @@ router.post('/login', async (req, res) => {
         if (!AdminName || !Password) {
             return res.status(400).json({ message: 'Fill out missing fields' });
         }
+
+        const isNameExist = await Admin.findOne({ AdminName });
+
+        if (!isNameExist) {
+            return res.status(404).json({ message: 'Invalid username' });
+        }
+
+        const hashedPassword = await isNameExist.Password;
+
+        const isPssswordCorrect = await bcrypt.compare(Password, hashedPassword);
     }
 })
