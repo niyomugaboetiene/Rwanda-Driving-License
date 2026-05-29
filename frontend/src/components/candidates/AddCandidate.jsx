@@ -91,7 +91,11 @@ const AddCandidate = () => {
                       onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                 </div>
+
+                <button onClick={handleAddCandidate}>Add</button>
             </div>
         </div>
     )
 }
+
+export default AddCandidate;
