@@ -8,7 +8,8 @@ router.post('/addCandidate', async (req, res) => {
             // CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
         const { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber } = req.body;
 
-        if (!CandidateNationalId || !FirstName || !LastName || !Gender || DOB || !ExamDate || !PhoneNumber) {
+        console.log( CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber);
+        if (!CandidateNationalId || !FirstName || !LastName || !Gender || !DOB || !ExamDate || !PhoneNumber) {
            return res.status(400).json({ message: 'Fill out missing fields' });
         }
 
@@ -18,7 +19,7 @@ router.post('/addCandidate', async (req, res) => {
             return res.status(403).json({ message: 'Phone number is taken' });
         }
 
-        const newCandidate = await Candidate.create({ CandidateNationalId, FirstName, ObtainedMarks, Decision });
+        const newCandidate = await Candidate.create({ CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
 
         return res.status(201).json({ message: 'New candidate added successfully', condidate: newCandidate });
     } catch (err) {

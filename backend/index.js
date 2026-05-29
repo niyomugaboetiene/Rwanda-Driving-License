@@ -20,7 +20,7 @@ app.use(session({
 }));
 
 // middleware
-app.use('auth', AdminRoute);
+app.use('/auth', AdminRoute);
 app.use('/grade', GradeRoute);
 app.use('/candidates', CandidateRoute);
 
