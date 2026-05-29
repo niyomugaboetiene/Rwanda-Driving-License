@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const AdminSchema = new mongoose.Schema({
     // LicenseExamCategory, ObtainedMarks/20, Decision
-    AdminName: { type: String, required: true },
+    AdminName: { type: String, required: true, unique: true },
     Password: { type: String, required: true },
 }, { timestamps: true });
 
