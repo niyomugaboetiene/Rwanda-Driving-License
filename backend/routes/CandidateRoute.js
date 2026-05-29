@@ -12,6 +12,12 @@ router.post('/addCandidate', async (req, res) => {
            return res.status(400).json({ message: 'Fill out missing fields' });
         }
 
+        const isPhoneExist = await Candidate.find({ PhoneNumber });
+
+        if (isPhoneExist.length > 0) {
+            return res.status(403).json({ message: 'Phone number is taken' });
+        }
+
         const newCandidate = await Candidate.create({ CandidateNationalId, FirstName, ObtainedMarks, Decision });
 
         return res.status(201).json({ message: 'New candidate added successfully', condidate: newCandidate });
@@ -23,13 +29,13 @@ router.post('/addCandidate', async (req, res) => {
 
 router.get('/list', async (req, res) => {
     try {
-        const list = await Grade.find();
+        const list = await Candidate.find();
 
         if (list.length === 0){
-            return res.status(404).json({ message: 'NO Grade in system' });
+            return res.status(404).json({ message: 'N0 cnadidate in system' });
         }
 
-        return res.status(200).json({ message: 'Grades', grade: list });
+        return res.status(200).json({ message: 'Candidates', candidate: list });
     } catch (err) {
         console.error(err);
         return res.status(500).json({ message: 'Internal server error' });
@@ -41,13 +47,13 @@ router.get('/list/:_id', async (req, res) => {
     try {
         const _id = req.params._id;
 
-        const list = await Grade.findById({ _id });
+        const list = await Candidate.findById({ _id });
 
         if (list.length === 0){
-            return res.status(404).json({ message: 'NO Grade in system' });
+            return res.status(404).json({ message: 'No candidate in system' });
         }
 
-        return res.status(200).json({ message: 'Grades', grade: list });
+        return res.status(200).json({ message: 'Candidate', candidate: list });
     } catch (err) {
         console.error(err);
         return res.status(500).json({ message: 'Internal server error' });
@@ -59,14 +65,17 @@ router.put('/update/:_id', async (req, res) => {
     
       const _id = req.params._id;
 
-      const { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision } = req.body;
+        const { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber } = req.body;
 
         let FieldsToUpdate = {};
 
         if (CandidateNationalId) FieldsToUpdate.CandidateNationalId = CandidateNationalId;
-        if (LicenseExamCategory) FieldsToUpdate.LicenseExamCategory = LicenseExamCategory;
-        if (ObtainedMarks) FieldsToUpdate.ObtainedMarks = ObtainedMarks;
-        if (Decision) FieldsToUpdate.Decision = Decision;
+        if (FirstName) FieldsToUpdate.FirstName = FirstName;
+        if (LastName) FieldsToUpdate.LastName = LastName;
+        if (Gender) FieldsToUpdate.Gender = Gender;
+        if (ExamDate) FieldsToUpdate.ExamDate = ExamDate;
+        if (DOB) FieldsToUpdate.DOB = DOB;
+        if (PhoneNumber) FieldsToUpdate.PhoneNumber = PhoneNumber;
 
         const Updated = await Grade.findByIdAndUpdate(_ID, FieldsToUpdate, { new: true });
 

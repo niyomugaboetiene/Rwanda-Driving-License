@@ -68,7 +68,7 @@ router.put('/update/:_id', async (req, res) => {
         if (ObtainedMarks) FieldsToUpdate.ObtainedMarks = ObtainedMarks;
         if (Decision) FieldsToUpdate.Decision = Decision;
 
-        const Updated = await Grade.findByIdAndUpdate(_ID, FieldsToUpdate, { new: true });
+        const Updated = await Grade.findByIdAndUpdate(_id, FieldsToUpdate, { new: true });
 
         return res.status(200).json({ message: 'Updated', update: Updated });
     } catch (err) {
