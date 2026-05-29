@@ -1,18 +1,20 @@
 import express from "express";
+import Candidate from "../schema/CandidateSchema.js";
+
 const router = express.Router();
 
-router.post('/addGrade', async (req, res) => {
+router.post('/addCandidate', async (req, res) => {
     try {
-            // CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
-        const { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision } = req.body;
+            // CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
+        const { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber } = req.body;
 
-        if (!CandidateNationalId || !LicenseExamCategory || !ObtainedMarks || !Decision) {
+        if (!CandidateNationalId || !FirstName || !LastName || !Gender || DOB || !ExamDate || !PhoneNumber) {
            return res.status(400).json({ message: 'Fill out missing fields' });
         }
 
-        const newGrade = await Grade.create({ CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
+        const newCandidate = await Candidate.create({ CandidateNationalId, FirstName, ObtainedMarks, Decision });
 
-        return res.status(201).json({ message: 'New Grade added successfully', grade : newGrade });
+        return res.status(201).json({ message: 'New candidate added successfully', condidate: newCandidate });
     } catch (err) {
         console.error(err);
         return res.status(500).json({ message: 'Internal server error' });
