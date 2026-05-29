@@ -68,20 +68,19 @@ const AddCandidate = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">Candidate National Id</label>
+                    <label htmlFor="">Date Of Birth</label>
                     <input 
-                      type="number" 
-                      placeholder="Enter National Id"
-                      onChange={(e) => setCandidateNationalId(e.target.value)}
+                      type="date" 
+                      onChange={(e) => setDOB(e.target.value)}
                     />
                 </div>
                 
                 <div>
-                    <label htmlFor="">Candidate National Id</label>
+                    <label htmlFor="">Exam Date</label>
                     <input 
-                      type="number" 
+                      type="date" 
                       placeholder="Enter National Id"
-                      onChange={(e) => setCandidateNationalId(e.target.value)}
+                      onChange={(e) => setExamDate(e.target.value)}
                     />
                 </div>
             </div>
