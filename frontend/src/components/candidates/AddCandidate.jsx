@@ -35,7 +35,8 @@ const AddCandidate = () => {
                     <label htmlFor="">Candidate National Id</label>
                     <input 
                       type="number" 
-                      placeholder="Enter "
+                      placeholder="Enter National Id"
+                      onChange={(e) => setCandidateNationalId(e.target.value)}
                     />
                 </div>
             </div>
