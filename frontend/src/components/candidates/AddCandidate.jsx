@@ -83,6 +83,14 @@ const AddCandidate = () => {
                       onChange={(e) => setExamDate(e.target.value)}
                     />
                 </div>
+                <div>
+                    <label htmlFor="">Phone Number</label>
+                    <input 
+                      type="text" 
+                      placeholder="Enter Phone Number"
+                      onChange={(e) => setPhoneNumber(e.target.value)}
+                    />
+                </div>
             </div>
         </div>
     )
