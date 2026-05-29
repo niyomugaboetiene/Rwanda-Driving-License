@@ -78,5 +78,16 @@ router.put('/update/:_id', async (req, res) => {
 });
 
 router.delete('/delete/:_id', async (req, res) => {
-    
-})
+    try {
+        const _id = req.params._id;
+
+        await Grade.findByIdAndDelete(_id);
+
+        return res.status(200).json({ message:'Updated successfully' });
+    } catch (err) {
+        console.error(err);
+        return req.status(500).json({ message: 'Internal server error' });
+    }
+});
+
+export default router;
