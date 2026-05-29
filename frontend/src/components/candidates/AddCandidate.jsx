@@ -20,6 +20,11 @@ const AddCandidate = () => {
             }
 
             const res = await axios.post("http://localhost:5000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate });
+            setMessage(res.data.message);
+        } catch (err) {
+            console.error(err);
+            const errorMessage = err.response?.data?.message || "Error occured";
+            setError(errorMessage);
         }
     }
 }
