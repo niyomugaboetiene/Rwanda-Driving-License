@@ -15,6 +15,7 @@ const AddCandidate = () => {
 
     const handleAddCandidate = async () => {
         try {
+            console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
             if (!CandidateNationalId || !FirstName || !LastName || !Gender || !DOB || !ExamDate || !PhoneNumber) {
                 setMessage("Fill out missing fields");
             }
