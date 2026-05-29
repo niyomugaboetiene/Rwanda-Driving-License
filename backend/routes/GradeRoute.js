@@ -1,5 +1,5 @@
 import express from "express";
-import Grade from "../schema/GradeSchema";
+import Grade from "../schema/GradeSchema.js";
 
 const router = express.Router();
 
