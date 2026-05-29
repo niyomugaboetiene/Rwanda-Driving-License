@@ -10,4 +10,16 @@ const AddCandidate = () => {
     const [DOB, setDOB] = useState("");
     const [ExamDate, setExamDate] = useState("");
     const [PhoneNumber, setPhoneNumber] = useState("");
+    const [message, setMessage] = useState("");
+    const [error, setError] = useState("");
+
+    const handleAddCandidate = async () => {
+        try {
+            if (!CandidateNationalId || !FirstName || !LastName || !Gender || !DOB || !ExamDate || !PhoneNumber) {
+                setMessage("Fill out missing fields");
+            }
+
+            const res = await axios.post("http://localhost:5000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate });
+        }
+    }
 }
