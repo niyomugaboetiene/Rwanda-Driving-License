@@ -6,7 +6,7 @@ const GradeSchema = new mongoose.Schema({
     LicenseExamCategory: { type: String, required: true },
     ObtainedMarks: { type: Number, required: true },
     Decision: { type: String, required: true }
-});
+}, { timestamps: true });
 
 const Grade = mongoose.model("grades", GradeSchema);
 

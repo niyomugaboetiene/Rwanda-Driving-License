@@ -9,7 +9,7 @@ const CandidateSchema = new mongoose.Schema({
     DOB: { type: Date, required: true },
     ExamDate: { type: Date, required: true },
     PhoneNumber: { type: Number, required: true }
-});
+}, { timestamps: true });
 
 const Candidate = mongoose.model("candidates", CandidateSchema);
 

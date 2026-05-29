@@ -32,7 +32,7 @@ router.get('/list', async (req, res) => {
         const list = await Candidate.find();
 
         if (list.length === 0){
-            return res.status(404).json({ message: 'N0 cnadidate in system' });
+            return res.status(404).json({ message: 'No cnadidate in system' });
         }
 
         return res.status(200).json({ message: 'Candidates', candidate: list });
@@ -75,9 +75,15 @@ router.put('/update/:_id', async (req, res) => {
         if (Gender) FieldsToUpdate.Gender = Gender;
         if (ExamDate) FieldsToUpdate.ExamDate = ExamDate;
         if (DOB) FieldsToUpdate.DOB = DOB;
-        if (PhoneNumber) FieldsToUpdate.PhoneNumber = PhoneNumber;
+        if (PhoneNumber) {
+            const isPhoneExist = await Candidate.find({ PhoneNumber });
+            if (isPhoneExist > 0) {
+                return res.status(403).json({ message: 'Phone number is taken' });
+            }
+            FieldsToUpdate.PhoneNumber = PhoneNumber;
+        };
 
-        const Updated = await Grade.findByIdAndUpdate(_ID, FieldsToUpdate, { new: true });
+        const Updated = await Candidate.findByIdAndUpdate(_id, FieldsToUpdate, { new: true });
 
         return res.status(200).json({ message: 'Updated', update: Updated });
     } catch (err) {
@@ -90,7 +96,7 @@ router.delete('/delete/:_id', async (req, res) => {
     try {
         const _id = req.params._id;
 
-        await Grade.findByIdAndDelete(_id);
+        await Candidate.findByIdAndDelete(_id);
 
         return res.status(200).json({ message:'Updated successfully' });
     } catch (err) {
