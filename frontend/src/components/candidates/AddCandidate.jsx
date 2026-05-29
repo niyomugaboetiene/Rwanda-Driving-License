@@ -27,4 +27,18 @@ const AddCandidate = () => {
             setError(errorMessage);
         }
     }
+
+    return (
+        <div>
+            <div>
+                <div>
+                    <label htmlFor="">Candidate National Id</label>
+                    <input 
+                      type="number" 
+                      placeholder="Enter "
+                    />
+                </div>
+            </div>
+        </div>
+    )
 }
