@@ -16,10 +16,6 @@ const AddCandidate = () => {
     const handleAddCandidate = async () => {
         try {
             console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            if (!CandidateNationalId || !FirstName || !LastName || !Gender || !DOB || !ExamDate || !PhoneNumber) {
-                setMessage("Fill out missing fields");
-            }
-
             const res = await axios.post("http://localhost:5000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
             setMessage(res.data.message);
         } catch (err) {
@@ -44,6 +40,7 @@ const AddCandidate = () => {
                       type="number" 
                       placeholder="Enter National Id"
                       onChange={(e) => setCandidateNationalId(e.target.value)}
+                      required={true}
                     />
                 </div>
                 
@@ -53,6 +50,7 @@ const AddCandidate = () => {
                       type="text" 
                       placeholder="Enter First Name"
                       onChange={(e) => FirstName(e.target.value)}
+                      required={true}
                     />
                 </div>
                 
@@ -61,6 +59,7 @@ const AddCandidate = () => {
                     <input 
                       type="text" 
                       placeholder="Enter Last Name"
+                      required={true}
                       onChange={(e) => setLastName(e.target.value)}
                     />
                 </div>
@@ -70,6 +69,7 @@ const AddCandidate = () => {
                     <input 
                       type="text" 
                       placeholder="Enter Gender"
+                      required={true}
                       onChange={(e) => setGender(e.target.value)}
                     />
                 </div>
@@ -78,6 +78,7 @@ const AddCandidate = () => {
                     <label htmlFor="">Date Of Birth</label>
                     <input 
                       type="date" 
+                      required={true}
                       onChange={(e) => setDOB(e.target.value)}
                     />
                 </div>
@@ -86,6 +87,7 @@ const AddCandidate = () => {
                     <label htmlFor="">Exam Date</label>
                     <input 
                       type="date" 
+                      required={true}
                       placeholder="Enter National Id"
                       onChange={(e) => setExamDate(e.target.value)}
                     />
@@ -93,7 +95,8 @@ const AddCandidate = () => {
                 <div>
                     <label htmlFor="">Phone Number</label>
                     <input 
-                      type="text" 
+                      type="text"
+                      required={true}
                       placeholder="Enter Phone Number"
                       onChange={(e) => setPhoneNumber(e.target.value)}
                     />
