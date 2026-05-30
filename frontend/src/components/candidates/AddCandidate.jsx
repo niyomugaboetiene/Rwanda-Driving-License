@@ -32,6 +32,12 @@ const AddCandidate = () => {
     return (
         <div>
             <div>
+                {error && (
+                    <p>{error}</p>
+                )}
+                {message && (
+                    <p>{message}</p>
+                )}
                 <div>
                     <label htmlFor="">Candidate National Id</label>
                     <input 
