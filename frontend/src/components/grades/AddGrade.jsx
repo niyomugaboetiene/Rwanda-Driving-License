@@ -70,17 +70,17 @@ const UpdateCandidate = () => {
                       onChange={(e) => setCandidates(e.target.value)}
                     >
                         {candidate?.map((cand, index) => (
-                            <option value={cand.CandidateNationalId} key={index}>{cand.FirstName} {cand.LastName}</option>
+                            <option value={cand.CandidateNationalId} key={index}>{cand.FirstName} {cand.CandidateNationalId}</option>
                         ))}
                     </select>
                 </div>
                 
                 <div className="mt-3">
-                    <label className="text-lg font-bold text-green-500 block">Last Name </label>
+                    <label className="text-lg font-bold text-green-500 block">License Category</label>
                     <input 
                       type="text" 
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
-                      placeholder="Enter Last Name"
+                      placeholder="Enter License Exam Category"
                       required={true}
                       onChange={(e) => setLastName(e.target.value)}
                     />
