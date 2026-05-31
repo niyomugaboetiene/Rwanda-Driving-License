@@ -30,7 +30,9 @@ const AddCandidate = () => {
             <div className="bg-white p-4 rounded-xl w-1/4">
                 <h1 className="text-xl text-center font-bold text-green-500 mb-3">Add Candidate Portal</h1>
                 {error && (
-                    <p>{error}</p>
+                    <div className="bg-red-300 py-2 px-3 text-red-600 font-bold rounded-full">
+                         <p>{error}</p>
+                    </div>
                 )}
                 {message && (
                     <p>{message}</p>
