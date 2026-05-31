@@ -19,6 +19,12 @@ const CandidateList = () => {
         handleGet();
     }, []);
 
+    const handleDeleteCandidate = async(_id) => {
+        try {
+            const confrim = window.confirm('Are you sure');
+        }
+    }
+
     return (
         <div className="bg-green-50 min-h-screen flex justify-center">
             <div className="max-w-7xl mx-auto w-full mt-5">
