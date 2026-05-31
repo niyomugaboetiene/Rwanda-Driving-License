@@ -4,7 +4,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 
   return (
-        <CandidateList />
+       <BrowserRouter>
+          <Routes>
+            <Route path="/candidate/add" element={<AddCandidate /> }/>
+            <Route path="/candidate/list" element={<CandidateList /> }/>
+          </Routes>
+       </BrowserRouter>
   )
 }
 

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const CandidateList = () => {
     const [candidates, setCandidates] = useState(null);
@@ -35,7 +36,6 @@ const CandidateList = () => {
                     </thead>
                     <tbody>
                         {candidates?.map((cand, index) => (
-                            //     CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
                             <tr key={index}>
                                 <td>{cand.CandidateNationalId}</td>
                                 <td>{cand.FirstName}</td>
@@ -44,6 +44,9 @@ const CandidateList = () => {
                                 <td>{new Date(cand.DOB).toLocaleDateString()}</td>
                                 <td>{new Date(cand.ExamDate).toLocaleDateString()}</td>
                                 <td>{cand.PhoneNumber}</td>
+
+                                <td><Link to={`/update/${cand._id}`}>Update</Link></td>
+                                <td><button>Delete</button></td>
                             </tr>
                         ))}
                     </tbody>
