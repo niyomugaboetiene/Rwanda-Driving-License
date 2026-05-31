@@ -64,12 +64,14 @@ const UpdateCandidate = () => {
                 </div>
                 
                 <div className="mt-3">
-                    <label className="text-lg font-bold text-green-500 block">First Name</label>
+                    <label className="text-lg font-bold text-green-500 block">Candidate</label>
                     <select 
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       onChange={(e) => setCandidates(e.target.value)}
                     >
-                        {}
+                        {candidate?.map((cand, index) => (
+                            <option value={cand.CandidateNationalId} key={index}>{cand.FirstName} {cand.LastName}</option>
+                        ))}
                     </select>
                 </div>
                 
