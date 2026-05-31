@@ -37,7 +37,7 @@ const UpdateCandidate = () => {
 
             setCandidateNationalId(data.CandidateNationalId);
             setDOB(new Date(data.DOB).toISOString('').split('T')[0]);
-            setExamDate(new Date(data.ExamDate()).toISOString().split('T')[0]);
+            setExamDate(new Date(data.ExamDate).toISOString('').split('T')[0]);
             setFirstName(data.FirstName);
             setLastName(data.LastName);
             setGender(data.Gender);

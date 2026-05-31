@@ -51,7 +51,7 @@ const CandidateList = () => {
                                 <td className="text-left py-3 px-4">{cand.PhoneNumber}</td>
 
                                 <td className="text-left py-3 px-4 flex justify-between">
-                                    <Link to={`/update/${cand._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
+                                    <Link to={`/candidate/update/${cand._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
                                     <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold">Delete</button>
                                 </td> 
                             </tr>
