@@ -21,7 +21,7 @@ const CandidateList = () => {
     return (
         <div className="bg-green-50 min-h-screen flex justify-center">
             <div className="max-w-7xl mx-auto w-full mt-5">
-                <h1 className="mb-3 text-center text-xl font-bold">Candidates List</h1>
+                <h1 className="mb-3 text-center text-xl font-bold text-green-600">Candidates List</h1>
                 <table className="w-full">
                     <thead className="bg-green-300">
                         <tr>
@@ -46,8 +46,11 @@ const CandidateList = () => {
                                 <td>{new Date(cand.ExamDate).toLocaleDateString()}</td>
                                 <td>{cand.PhoneNumber}</td>
 
-                                <td><Link to={`/update/${cand._id}`}>Update</Link></td>
-                                <td><button>Delete</button></td>
+                                <td>
+                                    <Link to={`/update/${cand._id}`}>Update</Link>
+                                    <button>Delete</button>
+                                </td>
+                                
                             </tr>
                         ))}
                     </tbody>
