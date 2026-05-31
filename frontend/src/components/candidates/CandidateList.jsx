@@ -24,7 +24,13 @@ const CandidateList = () => {
                 <table>
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>Candidate National Id</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Gender</th>
+                            <th>Date Of Birth</th>
+                            <th>Exam Date</th>
+                            <th>Phone Number</th>
                         </tr>
                     </thead>
                 </table>
