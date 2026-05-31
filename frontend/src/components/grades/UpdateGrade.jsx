@@ -19,6 +19,10 @@ const UpdateGrade = () => {
         try {
            const res = await axios.get(`http://localhost:4000/grade/list/${_id}`);
            const data = res.data.grade;
+           setCandidateNationalId(data.CandidateNationalId?._id);
+           setDecision(data.Decision);
+           setLicenseExamCategory(data.LicenseExamCategory);
+           setObtainedMarks(data.ObtainedMarks);
         } catch (err) {
             console.error(err);
         }
