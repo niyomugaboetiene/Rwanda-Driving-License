@@ -20,9 +20,10 @@ const CandidateList = () => {
 
     return (
         <div className="bg-green-50 min-h-screen flex justify-center">
-            <div className="max-w-7xl mx-auto w-full">
+            <div className="max-w-7xl mx-auto w-full mt-5">
+                <h1 className="mb-3 text-center text-xl font-bold">Candidates List</h1>
                 <table className="w-full">
-                    <thead>
+                    <thead className="bg-green-300">
                         <tr>
                             <th>Candidate National Id</th>
                             <th>First Name</th>
