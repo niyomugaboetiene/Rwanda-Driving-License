@@ -13,6 +13,8 @@ const AddCandidate = () => {
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
+    const [isLogged, setIsLogged] = useState(true);
+
     const handleAddCandidate = async () => {
         try {
             console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
