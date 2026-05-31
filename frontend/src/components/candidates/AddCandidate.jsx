@@ -46,7 +46,7 @@ const AddCandidate = () => {
                     />
                 </div>
                 
-                <div>
+                <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">First Name</label>
                     <input 
                       type="text" 
@@ -57,7 +57,7 @@ const AddCandidate = () => {
                     />
                 </div>
                 
-                <div>
+                <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">Last Name </label>
                     <input 
                       type="text" 
@@ -68,7 +68,7 @@ const AddCandidate = () => {
                     />
                 </div>
                 
-                <div>
+                <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">Gender</label>
                     <input 
                       type="text" 
@@ -79,7 +79,7 @@ const AddCandidate = () => {
                     />
                 </div>
                 
-                <div>
+                <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">Date Of Birth</label>
                     <input 
                       type="date" 
@@ -89,7 +89,7 @@ const AddCandidate = () => {
                     />
                 </div>
                 
-                <div>
+                <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">Exam Date</label>
                     <input 
                       type="date" 
@@ -99,7 +99,7 @@ const AddCandidate = () => {
                       onChange={(e) => setExamDate(e.target.value)}
                     />
                 </div>
-                <div>
+                <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">Phone Number</label>
                     <input 
                       type="text"
