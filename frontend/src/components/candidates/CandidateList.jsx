@@ -21,7 +21,10 @@ const CandidateList = () => {
 
     const handleDeleteCandidate = async(_id) => {
         try {
-            const confrim = window.confirm('Are you sure');
+            const confrim = window.confirm('Are you sure ?');
+            if (confrim) {
+                
+            }
         }
     }
 
