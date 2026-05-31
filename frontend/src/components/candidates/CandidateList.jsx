@@ -37,7 +37,7 @@ const CandidateList = () => {
                     </thead>
                     <tbody>
                         {candidates?.map((cand, index) => (
-                            <tr key={index}>
+                            <tr key={index} className="bg-green-100 text-gray-700">
                                 <td className="text-left py-3 px-4">{cand.CandidateNationalId}</td>
                                 <td className="text-left py-3 px-4">{cand.FirstName}</td>
                                 <td className="text-left py-3 px-4">{cand.LastName}</td>
