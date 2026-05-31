@@ -3,7 +3,18 @@ import Candidate from "../schema/CandidateSchema.js";
 
 const router = express.Router();
 
-router.post('/addCandidate', async (req, res) => {
+function isAuthorized (req, res, next) {
+    try {
+        if (!req.session.admin) {
+            return res.status(401).json({ message: 'Login first' });
+        } 
+
+        next();
+    } catch (err) {
+        console.error(err);
+    }
+}
+router.post('/addCandidate', isAuthorized, async (req, res) => {
     try {
             // CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
         const { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber } = req.body;
@@ -28,7 +39,7 @@ router.post('/addCandidate', async (req, res) => {
     }
 });
 
-router.get('/list', async (req, res) => {
+router.get('/list', isAuthorized, async (req, res) => {
     try {
         const list = await Candidate.find();
 
@@ -44,7 +55,7 @@ router.get('/list', async (req, res) => {
 });
 
 
-router.get('/list/:_id', async (req, res) => {
+router.get('/list/:_id', isAuthorized, async (req, res) => {
     try {
         const _id = req.params._id;
 
@@ -61,7 +72,7 @@ router.get('/list/:_id', async (req, res) => {
     }
 });
 
-router.put('/update/:_id', async (req, res) => {
+router.put('/update/:_id', isAuthorized, async (req, res) => {
     try {
     
       const _id = req.params._id;
@@ -93,7 +104,7 @@ router.put('/update/:_id', async (req, res) => {
     }
 });
 
-router.delete('/delete/:_id', async (req, res) => {
+router.delete('/delete/:_id', isAuthorized, async (req, res) => {
     try {
         const _id = req.params._id;
 

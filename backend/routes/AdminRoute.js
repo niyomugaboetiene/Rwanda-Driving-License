@@ -54,12 +54,12 @@ router.post('/login', async (req, res) => {
             return res.status(401).json({ message: 'Incorrect Password' });
         }
 
-        req.session.manager = {
+        req.session.admin = {
           id: isNameExist._id,
           name: isNameExist.AdminName
         }
 
-        return res.status(200).json({ message: 'Logged in successfully', admin: req.session.manager });
+        return res.status(200).json({ message: 'Logged in successfully', admin: req.session.admin });
     } catch (err) {
         console.error(err)
         return res.status(500).json({ message: 'Internal server error' });

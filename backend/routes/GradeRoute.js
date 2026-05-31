@@ -3,7 +3,18 @@ import Grade from "../schema/GradeSchema.js";
 
 const router = express.Router();
 
-router.post('/addGrade', async (req, res) => {
+function isAuthorized (req, res, next) {
+    try {
+        if (!req.session.admin) {
+            return res.status(401).json({ message: 'Login first' });
+        } 
+
+        next();
+    } catch (err) {
+        console.error(err);
+    }
+}
+router.post('/addGrade', isAuthorized, async (req, res) => {
     try {
             // CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
         const { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision } = req.body;
@@ -21,7 +32,7 @@ router.post('/addGrade', async (req, res) => {
     }
 });
 
-router.get('/list', async (req, res) => {
+router.get('/list', isAuthorized, async (req, res) => {
     try {
         const list = await Grade.find().populate("CandidateNationalId");
 
@@ -37,7 +48,7 @@ router.get('/list', async (req, res) => {
 });
 
 
-router.get('/list/:_id', async (req, res) => {
+router.get('/list/:_id', isAuthorized, async (req, res) => {
     try {
         const _id = req.params._id;
 
@@ -54,7 +65,7 @@ router.get('/list/:_id', async (req, res) => {
     }
 });
 
-router.put('/update/:_id', async (req, res) => {
+router.put('/update/:_id', isAuthorized, async (req, res) => {
     try {
     
       const _id = req.params._id;
@@ -77,7 +88,7 @@ router.put('/update/:_id', async (req, res) => {
     }
 });
 
-router.delete('/delete/:_id', async (req, res) => {
+router.delete('/delete/:_id',isAuthorized,  async (req, res) => {
     try {
         const _id = req.params._id;
 
