@@ -19,9 +19,9 @@ const CandidateList = () => {
     }, []);
 
     return (
-        <div>
-            <div>
-                <table>
+        <div className="bg-green-50 min-h-screen flex">
+            <div className="max-w-7xl">
+                <table className="w-full">
                     <thead>
                         <tr>
                             <th>Candidate National Id</th>
