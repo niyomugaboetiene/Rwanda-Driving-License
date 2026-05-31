@@ -3,7 +3,7 @@ import axios from "axios";
 
 const Register = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
-    const [UserName, setUserName] = useState("");
+    const [AdminName, setAdminName] = useState("");
     const [Password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
@@ -11,7 +11,7 @@ const Register = () => {
     const handleRegister = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.post("http://localhost:4000/auth/register", { UserName, Password }, { withCredentials: true });
+            const res = await axios.post("http://localhost:4000/auth/register", { AdminName, Password }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
@@ -44,7 +44,7 @@ const Register = () => {
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter User Name"
                       required={true}
-                      onChange={(e) => setUserName(e.target.value)}
+                      onChange={(e) => setAdminName(e.target.value)}
                     />
                 </div>
                 

@@ -5,6 +5,8 @@ import AddGrade from "./components/grades/AddGrade";
 import GradeList from "./components/grades/GradeList";
 import UpdateGrade from "./components/grades/UpdateGrade";
 
+import Register from "./components/admin/Register";
+import Login from "./components/admin/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 
@@ -18,6 +20,9 @@ function App() {
             <Route path="/grades/add" element={<AddGrade />}/>
             <Route path="/grades/list" element={<GradeList />}/>
             <Route path="/grades/update/:_id" element={<UpdateGrade />}/>
+
+            <Route path="/auth/login" element={<Login />}/>
+            <Route path="/auth/register" element={<Register />}/>
           </Routes>
        </BrowserRouter>
   )
