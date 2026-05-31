@@ -54,7 +54,7 @@ const GradeList = () => {
                     <tbody>
                         {grades?.map((gra, index) => (
                             <tr key={index} className="bg-green-100 text-gray-700">
-                                <td className="text-left py-3 px-4">{gra.CandidateNationalId}</td>
+                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.CandidateNationalId}</td>
                                 <td className="text-left py-3 px-4">{gra.CandidateNationalId?.FirstName}</td>
                                 <td className="text-left py-3 px-4">{gra.CandidateNationalId?.LastName}</td>
                                 <td className="text-left py-3 px-4">{gra.LicenseExamCategory}</td>
