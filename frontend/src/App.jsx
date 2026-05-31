@@ -31,7 +31,9 @@ function App() {
             <Route path="/auth/login" element={<Login />}/>
             <Route path="/auth/register" element={<Register />}/>
           </Routes>
-          <Footer />
+          <div className="mt-24">
+            <Footer />
+          </div>
        </BrowserRouter>
   )
 }

@@ -40,6 +40,18 @@ const CandidateList = () => {
         }
     }
 
+    if (!isLogged) {
+        return (
+            <div className="w-100 ms-195 mt-100 py-12 rounded-lg bg-yellow-300 flex justify-center items-center">
+                  <div className="">
+                    <h1 className="text-center text-yellow-600 text-xl mb-3">Securty Alert</h1>
+                    <p className="text-yellow-800">To access this data you must be logged in</p>
+                    <button>Login</button>
+                  </div>
+            </div>
+        )
+    }
+
     return (
         <div className="bg-green-50 min-h-screen flex justify-center">
             <div className="max-w-7xl mx-auto w-full mt-5">
