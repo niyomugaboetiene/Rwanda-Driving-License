@@ -110,7 +110,7 @@ const AddCandidate = () => {
                     />
                 </div>
 
-                <button onClick={handleAddCandidate}>Add</button>
+                <button onClick={handleAddCandidate} className="w-full mt-4 text-white bg-green-500 py-3 ">Add</button>
             </div>
         </div>
     )
