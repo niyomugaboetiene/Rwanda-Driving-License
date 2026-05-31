@@ -27,7 +27,7 @@ const AddCandidate = () => {
 
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
-            <div className="bg-white p-4 rounded-xl">
+            <div className="bg-white p-4 rounded-xl w-1/4">
                 <h1 className="text-xl text-center font-bold text-green-500 mb-3">Add Candidate Portal</h1>
                 {error && (
                     <p>{error}</p>
@@ -39,7 +39,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Candidate National Id</label>
                     <input 
                       type="number" 
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 border rounded-full px-3 bg-gray-100"
                       placeholder="Enter National Id"
                       onChange={(e) => setCandidateNationalId(e.target.value)}
                       required={true}
