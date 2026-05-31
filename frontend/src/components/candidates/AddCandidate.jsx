@@ -49,7 +49,7 @@ const AddCandidate = () => {
                     <input 
                       type="text" 
                       placeholder="Enter First Name"
-                      onChange={(e) => FirstName(e.target.value)}
+                      onChange={(e) => setFirstName(e.target.value)}
                       required={true}
                     />
                 </div>
