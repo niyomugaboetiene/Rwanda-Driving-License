@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CandidateList = () => {
     const [candidates, setCandidates] = useState(null);
+    const navigate = useNavigate();
 
     const handleGet = async () => {
         try {
@@ -21,7 +22,10 @@ const CandidateList = () => {
     return (
         <div className="bg-green-50 min-h-screen flex justify-center">
             <div className="max-w-7xl mx-auto w-full mt-5">
-                <h1 className="mb-3 text-center text-xl font-bold text-green-600">Candidates List</h1>
+               <div className="flex justify-between mb-4">
+                 <h1 className="mb-3 text-center text-xl font-bold text-green-600">Candidates List</h1>
+                 <button className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => navigatate('/candidates/list')}>Add new</button>
+               </div>
                 <table className="w-full">
                     <thead className="bg-green-300 text-gray-700">
                         <tr>
