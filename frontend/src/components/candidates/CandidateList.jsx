@@ -46,7 +46,7 @@ const CandidateList = () => {
                   <div className="">
                     <h1 className="text-center text-yellow-600 text-xl mb-3">Securty Alert</h1>
                     <p className="text-yellow-800">To access this data you must be logged in</p>
-                    <button>Login</button>
+                    <button className="bg-green-500 ms-40">Login</button>
                   </div>
             </div>
         )
