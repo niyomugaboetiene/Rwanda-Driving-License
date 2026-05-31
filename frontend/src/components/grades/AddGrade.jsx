@@ -7,6 +7,7 @@ const UpdateCandidate = () => {
     const [LicenseExamCategory, setLicenseExamCategory] = useState("");
     const [ObtainedMarks, setObtainedMarks] = useState("");
     const [Decision, setDecision] = useState("");
+    const [candidate, setCandidates] = useState(null);
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
@@ -64,13 +65,12 @@ const UpdateCandidate = () => {
                 
                 <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">First Name</label>
-                    <input 
-                      type="text" 
+                    <select 
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
-                      placeholder="Enter First Name"
-                      onChange={(e) => setFirstName(e.target.value)}
-                      required={true}
-                    />
+                      onChange={(e) => setCandidates(e.target.value)}
+                    >
+                        {}
+                    </select>
                 </div>
                 
                 <div className="mt-3">
