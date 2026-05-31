@@ -12,7 +12,7 @@ router.post('/addGrade', async (req, res) => {
            return res.status(400).json({ message: 'Fill out missing fields' });
         }
 
-        const newGrade = await Grade.create({ CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
+        const newGrade = await Grade.create({  CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
 
         return res.status(201).json({ message: 'New Grade added successfully', grade : newGrade });
     } catch (err) {

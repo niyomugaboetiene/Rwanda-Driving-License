@@ -54,17 +54,17 @@ const GradeList = () => {
                     <tbody>
                         {grades?.map((gra, index) => (
                             <tr key={index} className="bg-green-100 text-gray-700">
-                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.CandidateNationalId}</td>
-                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.FirstName}</td>
-                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.LastName}</td>
+                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.CandidateNationalId || "No national Id"}</td>
+                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.FirstName || "No first name"}</td>
+                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.LastName || "No last name"}</td>
                                 <td className="text-left py-3 px-4">{gra.LicenseExamCategory}</td>
                                 <td className="text-left py-3 px-4">{gra.ObtainedMarks}</td>
                                 <td className="text-left py-3 px-4">{gra.Decision}</td>
-                                <td className="text-left py-3 px-4">{gra.createdAt}</td>
+                                <td className="text-left py-3 px-4">{new Date(gra.createdAt).toLocaleDateString()}</td>
 
                                 <td className="text-left py-3 px-4 flex justify-between">
-                                    <Link to={`/grade/update/${cand._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
-                                    <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => handleDeleteGrade(cand._id)}>Delete</button>
+                                    <Link to={`/grade/update/${gra._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
+                                    <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => handleDeleteGrade(gra._id)}>Delete</button>
                                 </td> 
                             </tr>
                         ))}

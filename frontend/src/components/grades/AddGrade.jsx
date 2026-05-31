@@ -60,7 +60,7 @@ const AddGrade = () => {
                       onChange={(e) => setCandidateNationalId(e.target.value)}
                     >
                         {candidate?.map((cand, index) => (
-                            <option value={cand.CandidateNationalId} key={index}>{cand.FirstName} {cand.CandidateNationalId}</option>
+                            <option value={cand._id} key={index}>{cand.FirstName} {cand.CandidateNationalId}</option>
                         ))}
                     </select>
                 </div>
