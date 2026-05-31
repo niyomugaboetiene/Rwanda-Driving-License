@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const UpdateCandidate = () => {
+const AddGrade = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
     const [CandidateNationalId, setCandidateNationalId] = useState(0);
     const [LicenseExamCategory, setLicenseExamCategory] = useState("");
@@ -113,4 +113,4 @@ const UpdateCandidate = () => {
     )
 }
 
-export default UpdateCandidate;
+export default AddGrade;

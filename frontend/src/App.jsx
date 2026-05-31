@@ -1,6 +1,7 @@
 import AddCandidate from "./components/candidates/AddCandidate"
 import UpdateCandidate from "./components/candidates/UpdateCandidate";
 import CandidateList from "./components/candidates/CandidateList"
+import AddGrade from "./components/grades/AddGrade";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
 
