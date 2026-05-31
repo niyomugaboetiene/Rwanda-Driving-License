@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 const GradeList = () => {
     const [grades, setGrades] = useState(null);
     const navigate = useNavigate();
+    const [isLogged, setIsLogged] = useState(true);
 
     const handleGet = async () => {
         try {
@@ -12,6 +13,10 @@ const GradeList = () => {
            setGrades(res.data.grade);
         } catch (err) {
             console.error(err);
+            const errorMessage = err.response?.data?.message || "Error occured";
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 
@@ -28,6 +33,10 @@ const GradeList = () => {
             }
         } catch (err) {
             console.error(err);
+            const errorMessage = err.response?.data?.message || "Error occured";
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 

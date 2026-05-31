@@ -10,6 +10,7 @@ const AddGrade = () => {
     const [candidate, setCandidates] = useState(null);
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+    const [isLogged, setIsLogged] = useState(true);
 
     const handleAddGrade = async () => {
         try {
@@ -21,6 +22,9 @@ const AddGrade = () => {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";
             setError(errorMessage);
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
             setMessage("");
         }
     }
@@ -31,6 +35,10 @@ const AddGrade = () => {
            setCandidates(res.data.candidate);
         } catch (err) {
             console.error(err);
+            const errorMessage = err.response?.data?.message || "Error occured";
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 

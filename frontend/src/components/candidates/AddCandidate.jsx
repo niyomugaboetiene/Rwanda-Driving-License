@@ -17,7 +17,7 @@ const AddCandidate = () => {
 
     const handleAddCandidate = async () => {
         try {
-            console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
+            // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
             const res = await axios.post("http://localhost:4000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
@@ -25,6 +25,9 @@ const AddCandidate = () => {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";
             setError(errorMessage);
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
             setMessage("");
         }
     }

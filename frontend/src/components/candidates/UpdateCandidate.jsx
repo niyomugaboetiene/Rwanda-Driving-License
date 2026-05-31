@@ -15,6 +15,7 @@ const UpdateCandidate = () => {
     const [error, setError] = useState("");
 
     const { _id } = useParams();
+    const [isLogged, setIsLogged] = useState(true);
 
     const handleUpdateCandidate = async () => {
         try {
@@ -27,6 +28,9 @@ const UpdateCandidate = () => {
             const errorMessage = err.response?.data?.message || "Error occured";
             setError(errorMessage);
             setMessage("");
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 
@@ -44,6 +48,10 @@ const UpdateCandidate = () => {
             setPhoneNumber(data.FirstName);
         } catch (err) {
             console.error(err);
+            setError(errorMessage);
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 

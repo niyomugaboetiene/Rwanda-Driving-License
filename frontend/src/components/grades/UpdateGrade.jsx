@@ -11,6 +11,7 @@ const UpdateGrade = () => {
     const [candidate, setCandidates] = useState(null);
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+    const [isLogged, setIsLogged] = useState(true);
 
 
     const { _id } = useParams();
@@ -25,6 +26,10 @@ const UpdateGrade = () => {
            setObtainedMarks(data.ObtainedMarks);
         } catch (err) {
             console.error(err);
+            const errorMessage = err.response?.data?.message || "Error occured";
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 
@@ -43,6 +48,9 @@ const UpdateGrade = () => {
             const errorMessage = err.response?.data?.message || "Error occured";
             setError(errorMessage);
             setMessage("");
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 
@@ -52,6 +60,10 @@ const UpdateGrade = () => {
            setCandidates(res.data.candidate);
         } catch (err) {
             console.error(err);
+            const errorMessage = err.response?.data?.message || "Error occured";
+            if (errorMessage === "Login first") {
+                setIsLogged(false);
+            }
         }
     }
 
