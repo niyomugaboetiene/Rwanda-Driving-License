@@ -39,7 +39,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Candidate National Id</label>
                     <input 
                       type="number" 
-                      className="w-full py-3 border rounded-full px-3 bg-gray-100"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter National Id"
                       onChange={(e) => setCandidateNationalId(e.target.value)}
                       required={true}
@@ -50,7 +50,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">First Name</label>
                     <input 
                       type="text" 
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter First Name"
                       onChange={(e) => setFirstName(e.target.value)}
                       required={true}
@@ -61,7 +61,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Last Name </label>
                     <input 
                       type="text" 
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter Last Name"
                       required={true}
                       onChange={(e) => setLastName(e.target.value)}
@@ -72,7 +72,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Gender</label>
                     <input 
                       type="text" 
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter Gender"
                       required={true}
                       onChange={(e) => setGender(e.target.value)}
@@ -83,7 +83,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Date Of Birth</label>
                     <input 
                       type="date" 
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       required={true}
                       onChange={(e) => setDOB(e.target.value)}
                     />
@@ -93,7 +93,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Exam Date</label>
                     <input 
                       type="date" 
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       required={true}
                       placeholder="Enter National Id"
                       onChange={(e) => setExamDate(e.target.value)}
@@ -103,7 +103,7 @@ const AddCandidate = () => {
                     <label className="text-lg font-bold text-green-500 block">Phone Number</label>
                     <input 
                       type="text"
-                      className="w-full py-3 border border-green-500 rounded-full px-3"
+                      className="w-full py-3 rounded-full px-3 bg-gray-100"
                       required={true}
                       placeholder="Enter Phone Number"
                       onChange={(e) => setPhoneNumber(e.target.value)}
