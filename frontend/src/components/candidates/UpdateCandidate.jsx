@@ -38,10 +38,18 @@ const UpdateCandidate = () => {
             setCandidateNationalId(data.CandidateNationalId);
             setDOB(new Date(data.DOB).toISOString('').split('T')[0]);
             setExamDate(new Date(data.ExamDate()).toISOString().split('T')[0]);
-            set
+            setFirstName(data.FirstName);
+            setLastName(data.LastName);
+            setGender(data.Gender);
+            setPhoneNumber(data.FirstName);
+        } catch (err) {
+            console.error(err);
         }
     }
 
+    useEffect(() => {
+        handleGetExistingCandidate();
+    }, []);
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
             <div className="bg-white p-4 rounded-xl w-1/4">
