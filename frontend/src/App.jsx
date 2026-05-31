@@ -11,6 +11,8 @@ function App() {
             <Route path="/candidate/add" element={<AddCandidate /> }/>
             <Route path="/candidate/list" element={<CandidateList /> }/>
             <Route path="/candidate/update/:_id" element={<UpdateCandidate /> }/>
+
+            <Route path="/grades/add" element={<AddGrade />}/>
           </Routes>
        </BrowserRouter>
   )
