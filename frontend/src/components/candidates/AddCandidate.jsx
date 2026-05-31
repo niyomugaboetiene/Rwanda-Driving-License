@@ -27,8 +27,8 @@ const AddCandidate = () => {
 
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
-            <div className="bg-white p-4 rounded-lg">
-                <h1>Add Candidate Portal</h1>
+            <div className="bg-white p-4 rounded-xl">
+                <h1 className="text-xl text-center font-bold text-green-500 mb-3">Add Candidate Portal</h1>
                 {error && (
                     <p>{error}</p>
                 )}
