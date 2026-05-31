@@ -9,6 +9,7 @@ import Register from "./components/admin/Register";
 import Login from "./components/admin/Login";
 
 import Nav from "./components/dashboards/NavBar";
+import Footer from "./components/dashboards/Footer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -29,6 +30,8 @@ function App() {
 
             <Route path="/auth/login" element={<Login />}/>
             <Route path="/auth/register" element={<Register />}/>
+            <Route path="/auth" element={<Footer />}/>
+
           </Routes>
        </BrowserRouter>
   )
