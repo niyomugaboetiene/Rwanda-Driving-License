@@ -1,17 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const Login = () => {
+const Register = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
     const [UserName, setUserName] = useState("");
     const [Password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
-    const handleLogin = async () => {
+    const handleRegister = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.post("http://localhost:4000/auth/login", { UserName, Password }, { withCredentials: true });
+            const res = await axios.post("http://localhost:4000/auth/register", { UserName, Password }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
@@ -25,7 +25,7 @@ const Login = () => {
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
             <div className="bg-white p-4 rounded-xl w-1/4">
-                <h1 className="text-xl text-center font-bold text-green-500 mb-3">Add Grade Portal</h1>
+                <h1 className="text-xl text-center font-bold text-green-500 mb-3">Register</h1>
                 {error && (
                     <div className="bg-red-300 py-2 px-3 text-red-600 font-bold rounded-lg">
                          <p>{error}</p>
@@ -59,10 +59,10 @@ const Login = () => {
                     />
                 </div>
 
-                <button onClick={handleLogin} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Login</button>
+                <button onClick={handleRegister} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Register</button>
             </div>
         </div>
     )
 }
 
-export default Login;
+export default Register;
