@@ -44,10 +44,10 @@ const GradeList = () => {
                             <th className="text-left py-3 px-4">Candidate National Id</th>
                             <th className="text-left py-3 px-4">First Name</th>
                             <th className="text-left py-3 px-4">Last Name</th>
-                            <th className="text-left py-3 px-4">Gender</th>
-                            <th className="text-left py-3 px-4">Date Of Birth</th>
-                            <th className="text-left py-3 px-4">Exam Date</th>
-                            <th className="text-left py-3 px-4">Phone Number</th>
+                            <th className="text-left py-3 px-4">License Exam Category</th>
+                            <th className="text-left py-3 px-4">Obtained Marks/20</th>
+                            <th className="text-left py-3 px-4">Decision</th>
+                            <th className="text-left py-3 px-4">Done at</th>
                             <th className="text-left py-3 px-4">Actions</th>
                         </tr>
                     </thead>
@@ -55,15 +55,15 @@ const GradeList = () => {
                         {candidates?.map((gra, index) => (
                             <tr key={index} className="bg-green-100 text-gray-700">
                                 <td className="text-left py-3 px-4">{gra.CandidateNationalId}</td>
-                                <td className="text-left py-3 px-4">{gra.FirstName}</td>
-                                <td className="text-left py-3 px-4">{gra.LastName}</td>
-                                <td className="text-left py-3 px-4">{gra.Gender}</td>
-                                <td className="text-left py-3 px-4">{new Date(cand.DOB).toLocaleDateString()}</td>
-                                <td className="text-left py-3 px-4">{new Date(cand.ExamDate).toLocaleDateString()}</td>
-                                <td className="text-left py-3 px-4">{cand.PhoneNumber}</td>
+                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.FirstName}</td>
+                                <td className="text-left py-3 px-4">{gra.CandidateNationalId?.LastName}</td>
+                                <td className="text-left py-3 px-4">{gra.LicenseExamCategory}</td>
+                                <td className="text-left py-3 px-4">{gra.ObtainedMarks}</td>
+                                <td className="text-left py-3 px-4">{gra.Decision}</td>
+                                <td className="text-left py-3 px-4">{gra.createdAt}</td>
 
                                 <td className="text-left py-3 px-4 flex justify-between">
-                                    <Link to={`/candidate/update/${cand._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
+                                    <Link to={`/grade/update/${cand._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
                                     <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => handleDeleteGrade(cand._id)}>Delete</button>
                                 </td> 
                             </tr>
