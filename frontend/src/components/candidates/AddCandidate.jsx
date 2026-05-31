@@ -18,10 +18,12 @@ const AddCandidate = () => {
             console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
             const res = await axios.post("http://localhost:5000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
             setMessage(res.data.message);
+            setError("");
         } catch (err) {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";
             setError(errorMessage);
+            setMessage("");
         }
     }
 
