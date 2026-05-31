@@ -30,6 +30,18 @@ const UpdateCandidate = () => {
         }
     }
 
+    const handleGetExistingCandidate = async() => {
+        try {
+            const res = await axios.get(`http://localhost:4000/candidates/list/${_id}`);
+            const data = res.data.candidate;
+
+            setCandidateNationalId(data.CandidateNationalId);
+            setDOB(new Date(data.DOB).toISOString('').split('T')[0]);
+            setExamDate(new Date(data.ExamDate()).toISOString().split('T')[0]);
+            set
+        }
+    }
+
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
             <div className="bg-white p-4 rounded-xl w-1/4">
