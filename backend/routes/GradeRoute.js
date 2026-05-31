@@ -23,7 +23,7 @@ router.post('/addGrade', async (req, res) => {
 
 router.get('/list', async (req, res) => {
     try {
-        const list = await Grade.find();
+        const list = await Grade.find().populate("CandidateNationalId");
 
         if (list.length === 0){
             return res.status(404).json({ message: 'NO Grade in system' });
@@ -41,7 +41,7 @@ router.get('/list/:_id', async (req, res) => {
     try {
         const _id = req.params._id;
 
-        const list = await Grade.findById({ _id });
+        const list = await Grade.findById({ _id }).populate("CandidateNationalId");
 
         if (list.length === 0){
             return res.status(404).json({ message: 'NO Grade in system' });
