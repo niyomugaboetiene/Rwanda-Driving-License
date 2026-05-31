@@ -11,7 +11,7 @@ const UpdateCandidate = () => {
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
-    const handleAddCandidate = async () => {
+    const handleAddGrade = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
             const res = await axios.post("http://localhost:4000/grade/addGrade", { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
@@ -82,53 +82,32 @@ const UpdateCandidate = () => {
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter License Exam Category"
                       required={true}
-                      onChange={(e) => setLastName(e.target.value)}
+                      onChange={(e) => setLicenseExamCategory(e.target.value)}
                     />
                 </div>
                 
                 <div className="mt-3">
-                    <label className="text-lg font-bold text-green-500 block">Gender</label>
+                    <label className="text-lg font-bold text-green-500 block">ObtainedMarks/20</label>
                     <input 
                       type="text" 
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
-                      placeholder="Enter Gender"
+                      placeholder="Enter Obtained Marks"
                       required={true}
-                      onChange={(e) => setGender(e.target.value)}
+                      onChange={(e) => setObtainedMarks(e.target.value)}
                     />
                 </div>
                 
                 <div className="mt-3">
-                    <label className="text-lg font-bold text-green-500 block">Date Of Birth</label>
+                    <label className="text-lg font-bold text-green-500 block">Decision</label>
                     <input 
-                      type="date" 
+                      type="text" 
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       required={true}
-                      onChange={(e) => setDOB(e.target.value)}
-                    />
-                </div>
-                
-                <div className="mt-3">
-                    <label className="text-lg font-bold text-green-500 block">Exam Date</label>
-                    <input 
-                      type="date" 
-                      className="w-full py-3 rounded-full px-3 bg-gray-100"
-                      required={true}
-                      placeholder="Enter National Id"
-                      onChange={(e) => setExamDate(e.target.value)}
-                    />
-                </div>
-                <div className="mt-3">
-                    <label className="text-lg font-bold text-green-500 block">Phone Number</label>
-                    <input 
-                      type="text"
-                      className="w-full py-3 rounded-full px-3 bg-gray-100"
-                      required={true}
-                      placeholder="Enter Phone Number"
-                      onChange={(e) => setPhoneNumber(e.target.value)}
+                      onChange={(e) => setDecision(e.target.value)}
                     />
                 </div>
 
-                <button onClick={handleAddCandidate} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Add</button>
+                <button onClick={handleAddGrade} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Add Grade</button>
             </div>
         </div>
     )
