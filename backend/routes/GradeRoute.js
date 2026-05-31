@@ -90,4 +90,11 @@ router.delete('/delete/:_id', async (req, res) => {
     }
 });
 
+
+// daily report
+router.get('/report/daily', async (re, res) => {
+    try {
+        const today = new Date();
+    }
+})
 export default router;
