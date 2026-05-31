@@ -26,25 +26,25 @@ const CandidateList = () => {
                     <thead className="bg-green-300 text-gray-700">
                         <tr>
                             <th className="text-left py-3 px-4">Candidate National Id</th>
-                            <th>First Name</th>
-                            <th>Last Name</th>
-                            <th>Gender</th>
-                            <th>Date Of Birth</th>
-                            <th>Exam Date</th>
-                            <th>Phone Number</th>
-                            <th>Actions</th>
+                            <th className="text-left py-3 px-4">First Name</th>
+                            <th className="text-left py-3 px-4">Last Name</th>
+                            <th className="text-left py-3 px-4">Gender</th>
+                            <th className="text-left py-3 px-4">Date Of Birth</th>
+                            <th className="text-left py-3 px-4">Exam Date</th>
+                            <th className="text-left py-3 px-4">Phone Number</th>
+                            <th className="text-left py-3 px-4">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {candidates?.map((cand, index) => (
                             <tr key={index}>
-                                <td>{cand.CandidateNationalId}</td>
-                                <td>{cand.FirstName}</td>
-                                <td>{cand.LastName}</td>
-                                <td>{cand.Gender}</td>
-                                <td>{new Date(cand.DOB).toLocaleDateString()}</td>
-                                <td>{new Date(cand.ExamDate).toLocaleDateString()}</td>
-                                <td>{cand.PhoneNumber}</td>
+                                <td className="text-left py-3 px-4">{cand.CandidateNationalId}</td>
+                                <td className="text-left py-3 px-4">{cand.FirstName}</td>
+                                <td className="text-left py-3 px-4">{cand.LastName}</td>
+                                <td className="text-left py-3 px-4">{cand.Gender}</td>
+                                <td className="text-left py-3 px-4">{new Date(cand.DOB).toLocaleDateString()}</td>
+                                <td className="text-left py-3 px-4">{new Date(cand.ExamDate).toLocaleDateString()}</td>
+                                <td className="text-left py-3 px-4">{cand.PhoneNumber}</td>
 
                                 <td>
                                     <Link to={`/update/${cand._id}`}>Update</Link>
