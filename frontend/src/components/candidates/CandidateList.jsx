@@ -23,9 +23,9 @@ const CandidateList = () => {
             <div className="max-w-7xl mx-auto w-full mt-5">
                 <h1 className="mb-3 text-center text-xl font-bold text-green-600">Candidates List</h1>
                 <table className="w-full">
-                    <thead className="bg-green-300">
+                    <thead className="bg-green-300 text-gray-700">
                         <tr>
-                            <th>Candidate National Id</th>
+                            <th className="text-left py-3 px-4">Candidate National Id</th>
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Gender</th>
@@ -49,8 +49,7 @@ const CandidateList = () => {
                                 <td>
                                     <Link to={`/update/${cand._id}`}>Update</Link>
                                     <button>Delete</button>
-                                </td>
-                                
+                                </td> 
                             </tr>
                         ))}
                     </tbody>
