@@ -18,8 +18,8 @@ const UpdateCandidate = () => {
 
     const handleUpdateCandidate = async () => {
         try {
-            console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.put(`http://localhost:4000/candidates/update/${_id}`, { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
+            // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
+            const res = await axios.put(`http://localhost:4000/candidates/update/${_id}`, { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
@@ -32,7 +32,7 @@ const UpdateCandidate = () => {
 
     const handleGetExistingCandidate = async() => {
         try {
-            const res = await axios.get(`http://localhost:4000/candidates/list/${_id}`);
+            const res = await axios.get(`http://localhost:4000/candidates/list/${_id}`, { withCredentials: true });
             const data = res.data.candidate;
 
             setCandidateNationalId(data.CandidateNationalId);

@@ -8,7 +8,7 @@ const CandidateList = () => {
 
     const handleGet = async () => {
         try {
-           const res = await axios.get('http://localhost:4000/candidates/list');
+           const res = await axios.get('http://localhost:4000/candidates/list', { withCredentials: true });
            setCandidates(res.data.candidate);
         } catch (err) {
             console.error(err);
@@ -23,7 +23,7 @@ const CandidateList = () => {
         try {
             const confrim = window.confirm('Are you sure ?');
             if (confrim) {
-                await axios.delete(`http://localhost:4000/candidates/delete/${_id}`);
+                await axios.delete(`http://localhost:4000/candidates/delete/${_id}`, { withCredentials: true });
                 await handleGet();
             }
         } catch (err) {

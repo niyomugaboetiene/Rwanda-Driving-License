@@ -6,7 +6,6 @@ import session from "express-session";
 import AdminRoute from "./routes/AdminRoute.js";
 import GradeRoute from "./routes/GradeRoute.js";
 import CandidateRoute from "./routes/CandidateRoute.js";
-
 connection();
 
 const app = express();

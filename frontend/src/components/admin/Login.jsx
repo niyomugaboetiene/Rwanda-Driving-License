@@ -1,20 +1,17 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const AddGrade = () => {
+const Login = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
-    const [CandidateNationalId, setCandidateNationalId] = useState(0);
-    const [LicenseExamCategory, setLicenseExamCategory] = useState("");
-    const [ObtainedMarks, setObtainedMarks] = useState("");
-    const [Decision, setDecision] = useState("");
-    const [candidate, setCandidates] = useState(null);
+    const [UserName, setUserName] = useState("");
+    const [Password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
-    const handleAddGrade = async () => {
+    const handleLogin = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.post("http://localhost:4000/grade/addGrade", { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision }, { withCredentials: true });
+            const res = await axios.post("http://localhost:4000/auth/login", { UserName, Password }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
@@ -24,19 +21,6 @@ const AddGrade = () => {
             setMessage("");
         }
     }
-
-    const handleGetCandidate = async () => {
-        try {
-           const res = await axios.get('http://localhost:4000/candidates/list', { withCredentials: true });
-           setCandidates(res.data.candidate);
-        } catch (err) {
-            console.error(err);
-        }
-    }
-
-    useEffect(() => {
-        handleGetCandidate();
-    }, []);
 
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
@@ -104,4 +88,4 @@ const AddGrade = () => {
     )
 }
 
-export default AddGrade;
+export default Login;

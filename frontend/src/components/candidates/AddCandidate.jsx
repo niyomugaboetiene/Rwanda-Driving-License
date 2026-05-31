@@ -16,7 +16,7 @@ const AddCandidate = () => {
     const handleAddCandidate = async () => {
         try {
             console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.post("http://localhost:4000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
+            const res = await axios.post("http://localhost:4000/candidates/addCandidate", { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
         } catch (err) {

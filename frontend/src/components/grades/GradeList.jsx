@@ -8,7 +8,7 @@ const GradeList = () => {
 
     const handleGet = async () => {
         try {
-           const res = await axios.get('http://localhost:4000/grade/list');
+           const res = await axios.get('http://localhost:4000/grade/list', { withCredentials: true });
            setGrades(res.data.grade);
         } catch (err) {
             console.error(err);
@@ -23,7 +23,7 @@ const GradeList = () => {
         try {
             const confrim = window.confirm('Are you sure ?');
             if (confrim) {
-                await axios.delete(`http://localhost:4000/grade/delete/${_id}`);
+                await axios.delete(`http://localhost:4000/grade/delete/${_id}`, { withCredentials: true });
                 await handleGet();
             }
         } catch (err) {

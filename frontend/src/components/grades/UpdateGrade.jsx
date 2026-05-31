@@ -17,7 +17,7 @@ const UpdateGrade = () => {
 
         const handleGet = async () => {
         try {
-           const res = await axios.get(`http://localhost:4000/grade/list/${_id}`);
+           const res = await axios.get(`http://localhost:4000/grade/list/${_id}`, { withCredentials: true });
            const data = res.data.grade;
            setCandidateNationalId(data.CandidateNationalId?._id);
            setDecision(data.Decision);
@@ -35,7 +35,7 @@ const UpdateGrade = () => {
     const handleUpdateGrade = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.put(`http://localhost:4000/grade/update/${_id}`, { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
+            const res = await axios.put(`http://localhost:4000/grade/update/${_id}`, { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
@@ -48,7 +48,7 @@ const UpdateGrade = () => {
 
     const handleGetCandidate = async () => {
         try {
-           const res = await axios.get('http://localhost:4000/candidates/list');
+           const res = await axios.get('http://localhost:4000/candidates/list', { withCredentials: true });
            setCandidates(res.data.candidate);
         } catch (err) {
             console.error(err);
