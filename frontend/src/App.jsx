@@ -15,6 +15,9 @@ function App() {
 
   return (
        <BrowserRouter>
+          <div className="mb-24">
+             <Nav />
+          </div>
           <Routes>
             <Route path="/candidate/add" element={<AddCandidate /> }/>
             <Route path="/candidate/list" element={<CandidateList /> }/>
@@ -26,7 +29,6 @@ function App() {
 
             <Route path="/auth/login" element={<Login />}/>
             <Route path="/auth/register" element={<Register />}/>
-            <Route path="/nav" element={<Nav />}/>
           </Routes>
        </BrowserRouter>
   )

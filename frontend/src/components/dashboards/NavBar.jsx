@@ -10,8 +10,8 @@ const Nav = () => {
                <div>
                  <nav className="flex space-x-4 mt-6 font-light text-gray-800">
                     <Link className="hover:text-green-500 transition-colors">Home</Link>
-                    <Link className="hover:text-green-500 transition-colors">Candidates</Link>
-                    <Link className="hover:text-green-500 transition-colors">Grades</Link>
+                    <Link className="hover:text-green-500 transition-colors" to={'/candidate/list'}>Candidates</Link>
+                    <Link className="hover:text-green-500 transition-colors" to={'/grades/list'}>Grades</Link>
                 </nav>
                </div>
                <div>
