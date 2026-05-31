@@ -23,7 +23,7 @@ const CandidateList = () => {
         try {
             const confrim = window.confirm('Are you sure ?');
             if (confrim) {
-                await axios.delete(`http://localhost:5000/candidates/delete/${_id}`);
+                await axios.delete(`http://localhost:4000/candidates/delete/${_id}`);
                 await handleGet();
             }
         } catch (err) {
