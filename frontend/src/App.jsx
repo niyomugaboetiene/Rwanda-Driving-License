@@ -1,4 +1,5 @@
 import AddCandidate from "./components/candidates/AddCandidate"
+import UpdateCandidate from "./components/candidates/UpdateCandidate";
 import CandidateList from "./components/candidates/CandidateList"
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -8,6 +9,7 @@ function App() {
           <Routes>
             <Route path="/candidate/add" element={<AddCandidate /> }/>
             <Route path="/candidate/list" element={<CandidateList /> }/>
+            <Route path="/candidate/update/:_id" element={<UpdateCandidate /> }/>
           </Routes>
        </BrowserRouter>
   )
