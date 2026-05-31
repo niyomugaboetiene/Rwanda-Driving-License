@@ -35,7 +35,7 @@ const AddCandidate = () => {
                     </div>
                 )}
                 {message && (
-                    <div className="bg-red-300 py-2 px-3 text-red-600 font-bold rounded-lg mt-3">
+                    <div className="bg-green-300 py-2 px-3 text-green-600 font-bold rounded-lg mt-3">
                         <p>{message}</p>
                     </div>
                 )}
@@ -114,7 +114,7 @@ const AddCandidate = () => {
                     />
                 </div>
 
-                <button onClick={handleAddCandidate} className="w-full mt-4 rounded-full text-white bg-green-500 py-3 hover:bg-green-600 transition-colors">Add</button>
+                <button onClick={handleAddCandidate} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Add</button>
             </div>
         </div>
     )
