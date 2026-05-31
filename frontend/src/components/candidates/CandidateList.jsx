@@ -30,6 +30,7 @@ const CandidateList = () => {
                             <th>Date Of Birth</th>
                             <th>Exam Date</th>
                             <th>Phone Number</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
