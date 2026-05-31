@@ -23,8 +23,11 @@ const CandidateList = () => {
         try {
             const confrim = window.confirm('Are you sure ?');
             if (confrim) {
-                
+                await axios.delete(`http://localhost:5000/candidate/delete/${_id}`);
+                await handleGet();
             }
+        } catch (err) {
+            console.error(err);
         }
     }
 
@@ -61,7 +64,7 @@ const CandidateList = () => {
 
                                 <td className="text-left py-3 px-4 flex justify-between">
                                     <Link to={`/candidate/update/${cand._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
-                                    <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold">Delete</button>
+                                    <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => handleDeleteCandidate(_id)}>Delete</button>
                                 </td> 
                             </tr>
                         ))}
