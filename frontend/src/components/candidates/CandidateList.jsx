@@ -17,11 +17,17 @@ const CandidateList = () => {
         handleGet();
     }, []);
 
-
+                // CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
     return (
         <div>
             <div>
-                
+                <table>
+                    <thead>
+                        <tr>
+                            <th></th>
+                        </tr>
+                    </thead>
+                </table>
             </div>
         </div>
     )
