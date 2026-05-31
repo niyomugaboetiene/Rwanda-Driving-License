@@ -35,13 +35,13 @@ const CandidateList = () => {
                     <tbody>
                         {candidates?.map((cand, index) => (
                             //     CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
-                            <tr>
+                            <tr key={index}>
                                 <td>{cand.CandidateNationalId}</td>
                                 <td>{cand.FirstName}</td>
                                 <td>{cand.LastName}</td>
                                 <td>{cand.Gender}</td>
-                                <td>{cand.DOB}</td>
-                                <td>{cand.ExamDate}</td>
+                                <td>{new Date(cand.DOB).toLocaleDateString()}</td>
+                                <td>{new Date(cand.ExamDate).toLocaleDateString()}</td>
                                 <td>{cand.PhoneNumber}</td>
                             </tr>
                         ))}
@@ -51,3 +51,5 @@ const CandidateList = () => {
         </div>
     )
 }
+
+export default CandidateList;
