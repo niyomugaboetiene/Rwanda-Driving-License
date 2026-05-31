@@ -22,7 +22,7 @@ app.use(session({
 // middleware
 app.use('/auth', AdminRoute);
 app.use('/grade', GradeRoute);
-app.use('/candidates', CandidateRoute);
+app.use('/candidate', CandidateRoute);
 
 app.listen(5000, () => {
     console.log('http://localhost:5000');

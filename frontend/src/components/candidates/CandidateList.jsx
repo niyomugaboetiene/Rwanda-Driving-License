@@ -6,7 +6,7 @@ const CandidateList = () => {
 
     const handleGet = async () => {
         try {
-           const res = await axios.get('http://localhost:5000/candidates/list');
+           const res = await axios.get('http://localhost:5000/candidate/list');
            setCandidates(res.data.candidate);
         } catch (err) {
             console.error(err);
