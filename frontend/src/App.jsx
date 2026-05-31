@@ -3,6 +3,7 @@ import UpdateCandidate from "./components/candidates/UpdateCandidate";
 import CandidateList from "./components/candidates/CandidateList"
 import AddGrade from "./components/grades/AddGrade";
 import GradeList from "./components/grades/GradeList";
+import UpdateGrade from "./components/grades/UpdateGrade";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
             <Route path="/grades/add" element={<AddGrade />}/>
             <Route path="/grades/list" element={<GradeList />}/>
+            <Route path="/grades/update/:_id" element={<UpdateGrade />}/>
           </Routes>
        </BrowserRouter>
   )

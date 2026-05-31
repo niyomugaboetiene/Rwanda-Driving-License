@@ -59,11 +59,13 @@ const GradeList = () => {
                                 <td className="text-left py-3 px-4">{gra.CandidateNationalId?.LastName || "No last name"}</td>
                                 <td className="text-left py-3 px-4">{gra.LicenseExamCategory}</td>
                                 <td className="text-left py-3 px-4">{gra.ObtainedMarks}</td>
-                                <td className="text-left py-3 px-4">{gra.Decision}</td>
+                                <td className={`text-center px-4`}>
+                                    <span className={`${gra.Decision == 'fail' ? 'bg-red-500' : 'bg-green-500'} rounded-full py-2 px-7 text-white font-bold`}>{gra.Decision}</span>
+                                </td>
                                 <td className="text-left py-3 px-4">{new Date(gra.createdAt).toLocaleDateString()}</td>
 
                                 <td className="text-left py-3 px-4 flex justify-between">
-                                    <Link to={`/grade/update/${gra._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
+                                    <Link to={`/grades/update/${gra._id}`} className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold">Update</Link>
                                     <button  className="bg-red-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => handleDeleteGrade(gra._id)}>Delete</button>
                                 </td> 
                             </tr>

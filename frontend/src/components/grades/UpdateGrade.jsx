@@ -35,7 +35,7 @@ const UpdateGrade = () => {
     const handleUpdateGrade = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.post(`http://localhost:4000/grade/update/${_id}`, { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
+            const res = await axios.put(`http://localhost:4000/grade/update/${_id}`, { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
