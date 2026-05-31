@@ -77,6 +77,7 @@ const UpdateGrade = () => {
                 <div className="mt-3">
                     <label className="text-lg font-bold text-green-500 block">Candidate</label>
                     <select 
+                       value={CandidateNationalId}
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       onChange={(e) => setCandidateNationalId(e.target.value)}
                     >
@@ -90,6 +91,7 @@ const UpdateGrade = () => {
                     <label className="text-lg font-bold text-green-500 block">License Category</label>
                     <input 
                       type="text" 
+                      value={LicenseExamCategory}
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter License Exam Category"
                       required={true}
@@ -101,6 +103,7 @@ const UpdateGrade = () => {
                     <label className="text-lg font-bold text-green-500 block">ObtainedMarks/20</label>
                     <input 
                       type="text" 
+                      value={ObtainedMarks}
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       placeholder="Enter Obtained Marks"
                       required={true}
@@ -112,6 +115,7 @@ const UpdateGrade = () => {
                     <label className="text-lg font-bold text-green-500 block">Decision</label>
                     <input 
                       type="text" 
+                      value={Decision}
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       required={true}
                       placeholder="Enter Decision"
@@ -119,7 +123,7 @@ const UpdateGrade = () => {
                     />
                 </div>
 
-                <button onClick={handleAddGrade} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Add Grade</button>
+                <button onClick={handleUpdateGrade} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Update Grade</button>
             </div>
         </div>
     )
