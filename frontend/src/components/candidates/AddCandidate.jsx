@@ -35,10 +35,11 @@ const AddCandidate = () => {
                 {message && (
                     <p>{message}</p>
                 )}
-                <div>
-                    <label>Candidate National Id</label>
+                <div className="mt-3">
+                    <label className="text-lg font-bold text-green-500 block">Candidate National Id</label>
                     <input 
                       type="number" 
+                      className="w-full py-3 border border-green-500 rounded-full px-3"
                       placeholder="Enter National Id"
                       onChange={(e) => setCandidateNationalId(e.target.value)}
                       required={true}
