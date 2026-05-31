@@ -19,7 +19,7 @@ const UpdateCandidate = () => {
     const handleUpdateCandidate = async () => {
         try {
             console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
-            const res = await axios.post(`http://localhost:4000/candidates/update/${_id}`, { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
+            const res = await axios.put(`http://localhost:4000/candidates/update/${_id}`, { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber });
             setMessage(res.data.message);
             setError("");
         } catch (err) {
@@ -119,7 +119,7 @@ const UpdateCandidate = () => {
                     />
                 </div>
 
-                <button onClick={handleAddCandidate} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Add</button>
+                <button onClick={handleUpdateCandidate} className="w-full mt-4 rounded-full text-white bg-green-400 py-3 hover:bg-green-500 transition-colors">Update</button>
             </div>
         </div>
     )
