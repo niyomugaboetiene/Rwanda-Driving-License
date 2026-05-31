@@ -93,6 +93,7 @@ const AddGrade = () => {
                       type="text" 
                       className="w-full py-3 rounded-full px-3 bg-gray-100"
                       required={true}
+                      placeholder="Enter Decision"
                       onChange={(e) => setDecision(e.target.value)}
                     />
                 </div>
