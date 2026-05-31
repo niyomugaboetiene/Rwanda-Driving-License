@@ -17,7 +17,6 @@ const CandidateList = () => {
         handleGet();
     }, []);
 
-                // CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
     return (
         <div>
             <div>
@@ -33,6 +32,20 @@ const CandidateList = () => {
                             <th>Phone Number</th>
                         </tr>
                     </thead>
+                    <tbody>
+                        {candidates?.map((cand, index) => (
+                            //     CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
+                            <tr>
+                                <td>{cand.CandidateNationalId}</td>
+                                <td>{cand.FirstName}</td>
+                                <td>{cand.LastName}</td>
+                                <td>{cand.Gender}</td>
+                                <td>{cand.DOB}</td>
+                                <td>{cand.ExamDate}</td>
+                                <td>{cand.PhoneNumber}</td>
+                            </tr>
+                        ))}
+                    </tbody>
                 </table>
             </div>
         </div>
