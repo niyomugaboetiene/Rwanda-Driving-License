@@ -24,7 +24,7 @@ const CandidateList = () => {
             <div className="max-w-7xl mx-auto w-full mt-5">
                <div className="flex justify-between mb-4">
                  <h1 className="mb-3 text-center text-xl font-bold text-green-600">Candidates List</h1>
-                 <button className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => navigate('/candidate/list')}>Add new</button>
+                 <button className="bg-green-300 py-2 px-6 rounded-lg text-white font-bold" onClick={() => navigate('/candidate/add')}>Add new</button>
                </div>
                 <table className="w-full">
                     <thead className="bg-green-300 text-gray-700">
