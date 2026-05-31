@@ -35,7 +35,7 @@ const AddCandidate = () => {
                     <p>{message}</p>
                 )}
                 <div>
-                    <label htmlFor="">Candidate National Id</label>
+                    <label>Candidate National Id</label>
                     <input 
                       type="number" 
                       placeholder="Enter National Id"
@@ -45,7 +45,7 @@ const AddCandidate = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">First Name</label>
+                    <label>First Name</label>
                     <input 
                       type="text" 
                       placeholder="Enter First Name"
@@ -55,7 +55,7 @@ const AddCandidate = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">Last Name </label>
+                    <label>Last Name </label>
                     <input 
                       type="text" 
                       placeholder="Enter Last Name"
@@ -65,7 +65,7 @@ const AddCandidate = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">Gender</label>
+                    <label>Gender</label>
                     <input 
                       type="text" 
                       placeholder="Enter Gender"
@@ -75,7 +75,7 @@ const AddCandidate = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">Date Of Birth</label>
+                    <label>Date Of Birth</label>
                     <input 
                       type="date" 
                       required={true}
@@ -84,7 +84,7 @@ const AddCandidate = () => {
                 </div>
                 
                 <div>
-                    <label htmlFor="">Exam Date</label>
+                    <label>Exam Date</label>
                     <input 
                       type="date" 
                       required={true}
@@ -93,7 +93,7 @@ const AddCandidate = () => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="">Phone Number</label>
+                    <label>Phone Number</label>
                     <input 
                       type="text"
                       required={true}
