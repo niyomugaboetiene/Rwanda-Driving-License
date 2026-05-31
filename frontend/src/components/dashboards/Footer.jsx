@@ -8,10 +8,11 @@ const Footer = () => {
                </div>
 
                <div>
-                 <nav className="gird grid-cols-1 mt-6 font-light text-green-500">
-                    <Link className="hover:text-green-500 transition-colors">Home</Link>
-                    <Link className="hover:text-green-500 transition-colors" to={'/candidate/list'}>Candidates</Link>
-                    <Link className="hover:text-green-500 transition-colors" to={'/grades/list'}>Grades</Link>
+                 <nav className="space-y-4 mt-6 font-light text-green-500">
+                    <h1 className="font-bold text-xl border-s-3 border-purple-500">Quick Link</h1>
+                    <Link className="hover:text-green-500 transition-colors block">Home</Link>
+                    <Link className="hover:text-green-500 transition-colors block" to={'/candidate/list'}>Candidates</Link>
+                    <Link className="hover:text-green-500 transition-colors " to={'/grades/list'}>Grades</Link>
                 </nav>
                </div>
                <div>
