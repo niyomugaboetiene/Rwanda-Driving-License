@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom"
 const Nav = () => {
     return (
-        <div className="fixed h-20 top-0 left-0 right-0 bg-white shadow-xl">
+        <div>
+            <div className="bg-green-500">
+                   <div className="flex justify-end">
+                    <button>Login</button>
+                    <button>Register</button>
+                   </div>
+            </div>
+           <div className="fixed h-20 top-0 left-0 right-0 bg-white shadow-xl">
             <div className="flex justify-between">
                <div className="bg-linear-to-br from-green-400 to-yellow-500 via-blue-500 text-transparent bg-clip-text">
                  <h1 className="text-3xl ms-12 text-wrap mt-5 font-bold">RDL</h1>
@@ -19,6 +26,8 @@ const Nav = () => {
                </div>
             </div>
         </div>
+        </div>
+      
     )
 }
 
