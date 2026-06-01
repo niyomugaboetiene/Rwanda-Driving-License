@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
@@ -7,6 +8,7 @@ const Register = () => {
     const [Password, setPassword] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleRegister = async () => {
         try {
@@ -14,6 +16,7 @@ const Register = () => {
             const res = await axios.post("http://localhost:4000/auth/register", { AdminName, Password }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
+            navigate('/auth/login')
         } catch (err) {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";

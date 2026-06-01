@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateCandidate = () => {
     // CandidateNationalId (PK), FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber
@@ -13,6 +13,7 @@ const UpdateCandidate = () => {
     const [PhoneNumber, setPhoneNumber] = useState("");
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
+    const navigate = useNavigate();
 
     const { _id } = useParams();
     const [isLogged, setIsLogged] = useState(true);
@@ -23,6 +24,7 @@ const UpdateCandidate = () => {
             const res = await axios.put(`http://localhost:4000/candidates/update/${_id}`, { CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
+            navigate('/candidate/list')
         } catch (err) {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";

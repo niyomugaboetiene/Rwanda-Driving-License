@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const AddGrade = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
@@ -12,12 +13,15 @@ const AddGrade = () => {
     const [error, setError] = useState("");
     const [isLogged, setIsLogged] = useState(true);
 
+    const navigate = useNavigate();
+    
     const handleAddGrade = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
             const res = await axios.post("http://localhost:4000/grade/addGrade", { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
+           navigate('/grades/list')
         } catch (err) {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 const UpdateGrade = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
@@ -13,6 +13,7 @@ const UpdateGrade = () => {
     const [error, setError] = useState("");
     const [isLogged, setIsLogged] = useState(true);
 
+    const navigate = useNavigate();
 
     const { _id } = useParams();
 
@@ -43,6 +44,7 @@ const UpdateGrade = () => {
             const res = await axios.put(`http://localhost:4000/grade/update/${_id}`, { CandidateNationalId, LicenseExamCategory, ObtainedMarks, Decision }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
+            navigate('/grades/list')
         } catch (err) {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";

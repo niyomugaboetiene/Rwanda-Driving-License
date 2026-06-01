@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
     //  CandidateNationalId, LicenseExamCategory, ObtainedMarks/20, Decision
@@ -8,12 +9,15 @@ const Login = () => {
     const [message, setMessage] = useState("");
     const [error, setError] = useState("");
 
+    const navigate = useNavigate();
+
     const handleLogin = async () => {
         try {
             // console.log("received fields", CandidateNationalId, FirstName, LastName, Gender, DOB, ExamDate, PhoneNumber)
             const res = await axios.post("http://localhost:4000/auth/login", { AdminName, Password }, { withCredentials: true });
             setMessage(res.data.message);
             setError("");
+            navigate('/candidate/list');
         } catch (err) {
             console.error(err);
             const errorMessage = err.response?.data?.message || "Error occured";
