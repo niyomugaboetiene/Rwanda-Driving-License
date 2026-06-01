@@ -1,13 +1,18 @@
+// candidates
 import AddCandidate from "./components/candidates/AddCandidate"
 import UpdateCandidate from "./components/candidates/UpdateCandidate";
 import CandidateList from "./components/candidates/CandidateList"
+
+// Grades
 import AddGrade from "./components/grades/AddGrade";
 import GradeList from "./components/grades/GradeList";
 import UpdateGrade from "./components/grades/UpdateGrade";
 
+// auth
 import Register from "./components/admin/Register";
 import Login from "./components/admin/Login";
 
+// dashboards
 import Nav from "./components/dashboards/NavBar";
 import Footer from "./components/dashboards/Footer";
 
