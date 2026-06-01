@@ -3,9 +3,9 @@ const Nav = () => {
     return (
         <div className="fixed top-0 left-0 right-0">
             <div className="bg-green-500 py-1 px-4">
-                   <div className="flex justify-end">
-                    <button>Login</button>
-                    <button>Register</button>
+                   <div className="flex justify-end space-x-4">
+                    <Link className="text-white font-bold hover:text-green-800" to={'/auth/login'}>Login</Link>
+                    <Link className="text-white font-bold hover:text-green-800" to={'/auth/register'}>Register</Link>
                    </div>
             </div>
            <div className="h-20 bg-white shadow-xl">

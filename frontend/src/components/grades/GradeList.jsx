@@ -40,6 +40,19 @@ const GradeList = () => {
         }
     }
 
+
+    if (!isLogged) {
+        return (
+            <div className="w-100 ms-195 mt-100 py-8 rounded-lg bg-yellow-300 flex justify-center items-center">
+                  <div className="">
+                    <h1 className="text-center text-yellow-600 text-xl mb-3">Securty Alert</h1>
+                    <p className="text-yellow-800">To access this data you must be logged in</p>
+                    <button className="bg-green-500 ms-25 mt-3 py-3 px-8 rounded-full text-white font-bold hover:bg-green-400 transition-colors" onClick={() => navigate('/auth/login')}>Login</button>
+                  </div>
+            </div>
+        )
+    }
+
     return (
         <div className="bg-green-50 min-h-screen flex justify-center">
             <div className="max-w-7xl mx-auto w-full mt-5">
