@@ -17,6 +17,7 @@ import Nav from "./components/dashboards/NavBar";
 import Footer from "./components/dashboards/Footer";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 function App() {
 
   return (
