@@ -25,7 +25,8 @@ const Login = () => {
     return (
         <div className="bg-green-50 min-h-screen flex justify-center items-center">
             <div className="bg-white p-4 rounded-xl w-1/4">
-                <h1 className="text-xl text-center font-bold text-green-500 mb-3">Add Grade Portal</h1>
+                <h1 className="text-xl text-center font-bold text-green-500 mb-3">Login Portal</h1>
+                <h1 className="text-md text-center font-bold text-green-500 mb-3">Admin member only</h1>
                 {error && (
                     <div className="bg-red-300 py-2 px-3 text-red-600 font-bold rounded-lg">
                          <p>{error}</p>
